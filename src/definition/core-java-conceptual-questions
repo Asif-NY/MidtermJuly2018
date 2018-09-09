@@ -1,17 +1,40 @@
 Please answer the below core-java Questions:
 
 What is programing language?
-A.
+Ans. Programing language that has sets of instructions used to tell computers what to do.
+
 What jdk contains or composed of and define each components?
+Ans. The Java Development Kit (JDK) is a software development environment used for developing Java applications and applets. It includes the Java Runtime Environment (JRE),
+an interpreter/loader (java), a compiler (javac), an archiver (jar), a documentation generator (javadoc) and other tools needed in Java development.
+
 What is IDE?
+Ans. Integrated Development Environment
+
 What are the IDEs available in the market to support java?
+Ans. Eclipse, Intellij, Netbeans, Bluejay, Visual Studio etc.
+
 Explain the entire java life cycle.
+Ans.  1. Editing the program using IDE or text file
+      2. Compiling the source code – either thru IDE or JAVAC compiler
+      3. Executing the byte code  JVM  interperts the bytecode for the OS
+
 what is class?
+Ans. “blueprints” - used to create objects, classes define object data types and methods.
+
 What is object?
+Ans. Object is an Instant of Class.Java object is a combination of data and procedures working on the available data.
+
 What is the entry point of an application?
+Ans. The main method is the entry point of an application.
 Why main is static?
+Ans. The  main() method is  static  in nature,  which  means that this method can be directly accessed/called, without having to instantiate or createan object of class .
+Hence, main() method in every java program is declared static and it is automatically called to execute a Java program.
 Which class is the superclass of all classes?
+Ans. Object class
 What is difference between path and classpath variables?
+Ans. The main difference between PATH and CLASSPATH is that  PATH is an environment variable which is used to locate JDK binaries like "java" or "javac" command used to run java program and compile java source file.
+On the other hand, CLASSPATH, an environment variable is used by System or Application ClassLoader to locate and load compile Java bytecodes stored in the .
+class file
 What is the difference between an Interface and Abstract class?
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
 what is Access Specifier?
