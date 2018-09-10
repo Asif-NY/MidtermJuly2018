@@ -42,7 +42,7 @@ public class ConnectToSqlDB {
         return connect;
     }
 
-    public List<String> readDataBase(String tableName, String columnName)throws Exception{
+    public List<String> readDataBase(String tableName, String columnName, String mapValue)throws Exception{
         List<String> data = new ArrayList<String>();
 
         try {
@@ -81,6 +81,22 @@ public class ConnectToSqlDB {
             dataList.add(itemName);
         }
         return dataList;
+    }
+    public void createTableFromStringToMySql(String use_map, String tableName, String columnName){
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS `"+tableName+"`;");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE `"+tableName+"` (`ID` int(11) NOT NULL AUTO_INCREMENT,`"+columnName+"` varchar(2500) DEFAULT NULL,  PRIMARY KEY (`ID`) );");
+            ps.executeUpdate();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName)
@@ -151,6 +167,27 @@ public class ConnectToSqlDB {
                 ps.setObject(1,st);
                 ps.executeUpdate();
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public void InsertDataFromArrayListToMySql(List<String> list, String use_map, String tableName, String columnName1)
+    {
+        try {
+            connectToSqlDatabase();
+            String key = list.get(0);
+            String value = list.get(1);
+            System.out.println("key is:"+ key + " value is:" + value);
+
+            ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + ","  + " ) VALUES(?,?)");
+            ps.setString(1,key);
+            ps.setString(2,value);
+            ps.executeUpdate();
 
         } catch (IOException e) {
             e.printStackTrace();
