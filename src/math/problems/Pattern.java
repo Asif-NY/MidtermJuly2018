@@ -9,6 +9,36 @@ public class Pattern {
 		 *
 		 */
 
+		int ct = 0;
+		for(int i= 100; i >= 0; i--){
+			ct++;
+			if(ct <= 10){
+				System.out.println(i + " ");
+			}else{
+				for(i = 90; i>= 0; i-= 2){
+					if(ct > 10 && ct <=20){
+						System.out.println(i + " ");
+						ct++;
+					}else{
+						for(i = 70; i >= 0; i -= 3){
+							if(ct>20 && ct<= 30){
+								System.out.println(i + " ");
+								ct++;
+							}else{
+								for(i = 40; i>=0; i-=4){
+									if(ct>30 && ct<=40){
+										System.out.println(i + " ");
+										ct++;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
 
 
 
