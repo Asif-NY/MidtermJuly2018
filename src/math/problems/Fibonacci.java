@@ -10,7 +10,7 @@ public class Fibonacci {
         int i = 1;
         int j = 0;
         System.out.print("40 Fibonacci numbers: ");
-        for (int k = 1; k <= 40; k++) {
+        for (int k = 0; k <= 40; k++) {
             int sum = i + j;
             i = j;
             j = sum;
