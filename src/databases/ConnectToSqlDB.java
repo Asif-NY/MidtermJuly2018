@@ -42,7 +42,7 @@ public class ConnectToSqlDB {
         return connect;
     }
 
-    public List<String> readDataBase(String tableName, String columnName, String mapValue)throws Exception{
+    public List<String> readDataBase(String tableName, String columnName)throws Exception{
         List<String> data = new ArrayList<String>();
 
         try {
@@ -223,7 +223,7 @@ public class ConnectToSqlDB {
         User user = null;
         try{
             Connection conn = connectToSqlDatabase();
-            String query = "SELECT * FROM Students";
+            String query = "SELECT * FROM Student";
             // create the java statement
             Statement st = conn.createStatement();
             // execute the query, and get a java resultset
@@ -253,4 +253,6 @@ public class ConnectToSqlDB {
             System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
         }
     }
-}
+
+    }
+

@@ -7,14 +7,13 @@ public class Fibonacci {
          */
 
 
-        int i = 1;
-        int j = 0;
-        System.out.print("40 Fibonacci numbers: ");
-        for (int k = 0; k <= 40; k++) {
-            int sum = i + j;
-            i = j;
-            j = sum;
-            System.out.print(sum + " ");
+        int prev = 0;
+        int next = 1;
+        for (int i = 0; i < 40; i++) {
+            System.out.print(next + "\t");
+            prev = next - prev;
+            next = next + prev;
+
         }
     }
 }

@@ -61,7 +61,7 @@ public class UseArrayList {
 
 		connectDB.InsertDataFromArrayListToMySql(list, "use_map", "array_list", "listElement");
 
-		List<String> numbers = connectDB.readDataBase("array_list", "listElement", "mapValue");
+		List<String> numbers = connectDB.readDataBase("array_list", "listElement");
 		for(String st:numbers){
 			System.out.println(st);
 		}
